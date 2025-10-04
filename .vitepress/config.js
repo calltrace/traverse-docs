@@ -9,20 +9,20 @@ export default withMermaid(defineConfig({
   srcDir: 'docs',
 
   head: [
-    ['link', { rel: 'icon', href: '/traverse-docs/logo.png' }],
+    ['link', { rel: 'icon', href: '/logo.png' }],
     ['meta', { name: 'theme-color', content: '#3c82f6' }],
     ['meta', { property: 'og:type', content: 'website' }],
     ['meta', { property: 'og:locale', content: 'en' }],
     ['meta', { property: 'og:title', content: 'Traverse | Solidity Analysis Tools' }],
     ['meta', { property: 'og:site_name', content: 'Traverse' }],
-    ['meta', { property: 'og:url', content: 'https://calltrace.github.io/traverse-docs/' }],
+    ['meta', { property: 'og:url', content: 'https://traverse.tools/' }],
     ['meta', { property: 'og:description', content: 'Professional tools for analyzing, visualizing, and testing Solidity smart contracts' }]
   ],
 
   themeConfig: {
     logo: {
-      light: '/traverse-docs/logo.png',
-      dark: '/traverse-docs/logo.png'
+      light: '/logo.png',
+      dark: '/logo.png'
     },
 
     nav: [
