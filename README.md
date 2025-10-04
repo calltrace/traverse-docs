@@ -12,13 +12,11 @@ dot -Tsvg graph.dot -o graph.svg
 
 ## Documentation
 
-Visit the live documentation site: [Traverse Documentation](https://calltrace.github.io/traverse-docs/)
-
 ### Quick Links
-- [Installation Guide](https://calltrace.github.io/traverse-docs/installation)
-- [Tools Overview](https://calltrace.github.io/traverse-docs/tools/sol2cg)
-- [VSCode Extension](https://calltrace.github.io/traverse-docs/integration/vscode)
-- [Examples](https://calltrace.github.io/traverse-docs/examples/smart-invoice)
+- [Installation Guide](docs/installation.md)
+- [Tools Overview](docs/tools/sol2cg.md)
+- [VSCode Extension](docs/integration/vscode.md)
+- [Examples](docs/examples/smart-invoice.md)
 
 ## Tools
 
