@@ -12,10 +12,10 @@ dot -Tsvg graph.dot -o graph.svg
 
 ## Documentation
 
-- [Installation](/installation)
-- [Tools](/tools/sol2cg)
-- [VSCode Extension](/integration/vscode)
-- [Examples](/examples/smart-invoice)
+- [Installation](/traverse-docs/installation)
+- [Tools](/traverse-docs/tools/sol2cg)
+- [VSCode Extension](/traverse-docs/integration/vscode)
+- [Examples](/traverse-docs/examples/smart-invoice)
 
 ## Tools
 
