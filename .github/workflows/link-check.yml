@@ -1,0 +1,67 @@
+name: Check Links
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  link-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v3
+        with:
+          version: 9
+
+      - name: Get pnpm store directory
+        shell: bash
+        run: |
+          echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
+
+      - name: Setup pnpm cache
+        uses: actions/cache@v4
+        with:
+          path: ${{ env.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build documentation
+        run: pnpm docs:build
+
+      - name: Check links with markdown-link-check
+        uses: gaurav-nelson/github-action-markdown-link-check@v1
+        with:
+          use-quiet-mode: 'yes'
+          use-verbose-mode: 'yes'
+          config-file: '.markdownlinkcheck.json'
+
+      - name: Check HTML links
+        run: |
+          # Install html-proofer
+          gem install html-proofer
+
+          # Check built HTML files
+          htmlproofer .vitepress/dist \
+            --check-html \
+            --check-opengraph \
+            --report-missing-names \
+            --log-level :debug \
+            --extension ".html" \
+            --ignore-empty-alt \
+            --ignore-status-codes 0,500,999 \
+            --ignore-urls "/https://github.com/calltrace/traverse.*/" \
+            --ignore-urls "http://localhost"

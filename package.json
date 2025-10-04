@@ -1,0 +1,32 @@
+{
+  "name": "traverse-docs",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Official documentation for Traverse - Solidity Analysis Tools",
+  "homepage": "https://calltrace.github.io/traverse",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/calltrace/traverse-docs.git"
+  },
+  "scripts": {
+    "dev": "vitepress dev",
+    "build": "vitepress build",
+    "preview": "vitepress preview",
+    "serve": "vitepress preview"
+  },
+  "devDependencies": {
+    "vitepress": "^1.0.0-rc.31",
+    "vitepress-plugin-mermaid": "^2.0.17",
+    "mermaid": "^10.6.1"
+  },
+  "keywords": [
+    "traverse",
+    "solidity",
+    "smart-contracts",
+    "blockchain",
+    "security-analysis",
+    "call-graph",
+    "documentation",
+    "rust"
+  ]
+}
