@@ -12,11 +12,7 @@ dot -Tsvg graph.dot -o graph.svg
 
 ## Documentation
 
-### Quick Links
-- [Installation Guide](docs/installation.md)
-- [Tools Overview](docs/tools/sol2cg.md)
-- [VSCode Extension](docs/integration/vscode.md)
-- [Examples](docs/examples/smart-invoice.md)
+The documentation is available in the `docs/` directory, covering installation, tools, integration options, and examples.
 
 ## Tools
 
